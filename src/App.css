@@ -1,0 +1,180 @@
+/* Global Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+/* Header at the top */
+.header {
+  background-color: #000000;
+  padding: 12px 0; /* Reduced padding */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.header-title {
+  color: #fff;
+  font-size: 1.5rem; /* Reduced font size */
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Navigation (Navbar) */
+.navbar {
+  background-color: #000000;
+  padding: 15px 0; /* Reduced padding */
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the navbar */
+  position: fixed;
+  bottom: -100%; /* Start below the screen */
+  left: 0;
+  z-index: 10;
+  animation: slideUp 1s ease-out forwards; /* Slide-up effect */
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px; /* Smaller gap */
+  justify-content: center; /* Center the links horizontally */
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1.2rem; /* Reduced font size */
+  padding: 10px 18px; /* Reduced padding */
+  border-radius: 6px; /* Slightly smaller radius */
+  opacity: 0; /* Start invisible */
+  transform: translateY(20px); /* Start below the screen */
+  animation: fadeInUp 0.6s ease-out forwards; /* Fade in with upward motion */
+}
+
+.nav-links li a:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.nav-links li a:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.nav-links li a:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+.nav-links li a:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.nav-links li a:hover {
+  background-color: #575757;
+  transform: translateY(-5px);
+  transition: transform 0.2s ease-out;
+}
+
+/* Slide-up Animation for Navbar */
+@keyframes slideUp {
+  0% {
+    bottom: -100%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+/* Fade-in and Slide-up Animation for Links */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Main container for each page */
+.page-container {
+  max-width: 1050px; /* Reduced max width */
+  margin: 0 auto;
+  padding: 10px;
+  padding-top: 75px; /* Adjusted top padding */
+  padding-bottom: 75px; /* Adjusted bottom padding */
+  background-color: #0fbc51;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+/* Responsiveness for iPhone 14 Pro (Portrait mode and smaller screens) */
+@media (max-width: 1170px) {
+  .header-title {
+    font-size: 1.4rem; /* Adjust header title for smaller screens */
+  }
+
+  .navbar {
+    padding: 12px 0; /* Reduced padding for iPhone */
+  }
+
+  .nav-links {
+    gap: 25px; /* Smaller gap for iPhone */
+  }
+
+  .nav-links li a {
+    font-size: 1.1rem; /* Slightly smaller font size for iPhone */
+    padding: 8px 15px; /* Smaller padding */
+  }
+
+  .page-container {
+    padding: 8px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+/* For even smaller devices like iPhone SE, small Android devices */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 0; /* Adjust padding for smaller screens */
+  }
+
+  .nav-links {
+    gap: 20px; /* Further reduce gap for smaller devices */
+  }
+
+  .nav-links li a {
+    font-size: 1rem; /* Smaller font size */
+    padding: 8px 12px; /* Smaller padding */
+  }
+
+  .header-title {
+    font-size: 1.3rem; /* Smaller font size */
+  }
+
+  .page-container {
+    padding: 5px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}

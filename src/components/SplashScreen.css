@@ -1,0 +1,25 @@
+/* SplashScreen.css */
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  z-index: 9999; /* Agar splash screen berada di atas halaman lain */
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+.splash-screen.fade-out {
+  opacity: 0; /* Efek menghilang */
+}
+
+.logo {
+  width: 300px; /* Gambar lebih besar */
+  height: auto;
+  transition: transform 1s ease-out; /* Efek transform untuk animasi */
+}

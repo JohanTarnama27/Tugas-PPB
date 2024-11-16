@@ -1,0 +1,111 @@
+/* HomePage Styling */
+.home-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Membuat container mengambil tinggi penuh layar */
+  width: 100vw; /* Membuat container mengambil lebar penuh layar */
+  background-image: url("https://www.thespruce.com/thmb/63edlgulw1S8aSSpcINVHTCRpdw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/anthurium-growing-outdoors-659084331-58331b623df78c6f6a779676.jpg");
+  background-size: cover; /* Membuat gambar menutupi seluruh layar */
+  background-position: center; /* Memastikan gambar tetap berada di tengah layar */
+  background-attachment: fixed; /* Efek parallax, gambar tetap saat scroll */
+  color: white;
+  text-align: center;
+  padding: 0; /* Menghapus padding yang tidak diperlukan */
+}
+
+/* Header Styling */
+.home-header {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  padding: 15px 8px; /* Reduced padding */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Smaller shadow */
+  max-width: 350px; /* Further reduced max-width */
+  width: 100%;
+}
+
+.welcome-title,
+.welcome-description {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid transparent; /* Cursor effect */
+  width: 0;
+  animation: typing 3s steps(25) 1s forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+.welcome-title {
+  font-size: 1.5rem; /* Smaller title font size */
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 4px; /* Smaller margin */
+  text-transform: uppercase;
+  animation-delay: 0s;
+}
+
+.welcome-description {
+  font-size: 0.7rem; /* Further reduced font size */
+  margin-bottom: 10px; /* Smaller margin */
+  font-weight: 400;
+  line-height: 1.3;
+  animation-delay: 3s;
+}
+
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Smaller space between buttons */
+}
+
+.explore-button,
+.about-button {
+  font-size: 0.8rem; /* Smaller button font size */
+  padding: 6px 14px; /* Reduced padding */
+  background-color: #4caf50; /* Green color */
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.explore-button:hover,
+.about-button:hover {
+  background-color: #38f49f;
+  transform: translateY(-2px); /* Small hover animation */
+}
+
+/* Responsive Styles for smaller devices like iPhone 14 Pro */
+@media (max-width: 430px) {
+  .welcome-title {
+    font-size: 1.4rem; /* Smaller title font size */
+  }
+
+  .welcome-description {
+    font-size: 0.65rem; /* Smaller description font size */
+  }
+
+  .explore-button,
+  .about-button {
+    font-size: 0.75rem; /* Smaller button font size */
+    padding: 6px 12px; /* Further reduced padding */
+  }
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Cursor Blink animation */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
